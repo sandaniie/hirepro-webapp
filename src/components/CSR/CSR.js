@@ -15,6 +15,7 @@ import {
   DialogTitle,
   DialogContent,
   DialogActions,
+  Switch,
   IconButton,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete"; // Import the DeleteIcon
@@ -81,7 +82,13 @@ const CSR = () => {
     setDeleteRowIndex(null);
     setConfirmationDialogOpen(false);
   };
-
+  const handleToggleStatus = (index) => {
+    const updatedData = [...tableData];
+    updatedData[index].status =
+      updatedData[index].status === "Active" ? "Inactive" : "Active";
+    setTableData(updatedData);
+  };
+  
   const handleCancelDelete = () => {
     setDeleteRowIndex(null);
     setConfirmationDialogOpen(false);
@@ -102,7 +109,7 @@ const CSR = () => {
               <ld>Dashboard</ld>
             </li>
           </Link>
-          <Link to="/finance">
+          {/* <Link to="/finance">
             <li>
               <ld>
                 <ld>
@@ -111,7 +118,7 @@ const CSR = () => {
               </ld>
               <ld>Finance</ld>
             </li>
-          </Link>
+          </Link> */}
           <Link to="/complaints">
             <li>
               <ld>
@@ -177,7 +184,8 @@ const CSR = () => {
               <TableCell>Email</TableCell>
               <TableCell>Contact</TableCell>
               <TableCell>Status</TableCell>
-              <TableCell>Delete</TableCell>
+              {/* <TableCell>Delete</TableCell> */}
+              <TableCell>Enable/Disable</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -209,14 +217,36 @@ const CSR = () => {
                   />
                   {row.status}
                 </TableCell>
-                <TableCell>
+                {/* <TableCell>
                   <IconButton
                     aria-label="delete"
                     onClick={() => handleDeleteClick(index)}
                   >
                     <DeleteIcon color="error" />
                   </IconButton>
-                </TableCell>
+
+                    <Switch
+                      checked={CSR.restrict}
+                      onChange={() => openConfirmationDialog(index)}
+                      color="secondary"
+                    />
+                </TableCell> */}
+
+<TableCell>
+  {/* Uncomment the Switch component */}
+  <Switch
+    // Assuming you want to toggle the status based on the row's status
+    checked={row.status === "Active"}
+    // Handle the change event to update the status
+    onChange={() => handleToggleStatus(index)}
+    color="secondary"
+  />
+</TableCell>
+
+
+
+
+
               </TableRow>
             ))}
           </TableBody>
