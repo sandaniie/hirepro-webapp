@@ -13,15 +13,13 @@ const FinanceNavbar = ({ firstName, avatar, name, role }) => {
         </div>
       </div>
       <div className="dash-nav-section2">
-        <img className="dash-nav-icon" src="Icon-Menu.png" alt="CardIcon" />
+        {/* <img className="dash-nav-icon" src="Icon-Menu.png" alt="CardIcon" />
         <img
           className="dash-nav-icon"
           src="Icon-notification.png"
           alt="CardIcon"
-        />
-        <Link to="/login">
-          <PowerSettingsNewIcon />
-        </Link>
+        /> */}
+        
         <div className="dash-nav-avatar">
           <img className="dash-nav-avatar-img" src={avatar} alt="avatar" />
           <div>
@@ -33,6 +31,10 @@ const FinanceNavbar = ({ firstName, avatar, name, role }) => {
             style={{ width: "10px", height: "10px", marginTop: "20px" }}
             alt="down"
           />
+
+<Link to="/login">
+          <PowerSettingsNewIcon />
+        </Link>
         </div>
       </div>
     </div>

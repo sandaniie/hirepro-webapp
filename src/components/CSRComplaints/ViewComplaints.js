@@ -60,7 +60,7 @@ const AddCSR = () => {
               <ld>Dashboard</ld>
             </li>
           </Link>
-          <Link to="/finance">
+          {/* <Link to="/finance">
             <li>
               <ld>
                 <ld>
@@ -69,7 +69,7 @@ const AddCSR = () => {
               </ld>
               <ld>Finance</ld>
             </li>
-          </Link>
+          </Link> */}
           <li>
             <ld>
               <ld>
